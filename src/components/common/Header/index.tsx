@@ -1,4 +1,4 @@
-import siteMetaData from 'constants/siteMetaData'
+import config from 'config'
 import styles from './Header.module.scss'
 
 export type HeaderProps = {
@@ -8,8 +8,8 @@ export type HeaderProps = {
 function Header({ theme }: HeaderProps) {
   return (
     <div className={styles.container}>
-      {theme === 'primary' && <h1>{siteMetaData.title}</h1>}
-      {theme === 'secondary' && <h2>{siteMetaData.title}</h2>}
+      {theme === 'primary' && <h1>{config.title}</h1>}
+      {theme === 'secondary' && <h2>{config.title}</h2>}
     </div>
   )
 }

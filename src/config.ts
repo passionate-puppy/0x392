@@ -1,9 +1,9 @@
 import imageAvatar from 'images/avatar.jpg'
 
-const siteMetaData = {
+const config = {
   title: '0x392',
   avatar: imageAvatar,
   description: 'description',
 }
 
-export default siteMetaData
+export default config
