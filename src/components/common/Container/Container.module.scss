@@ -1,0 +1,14 @@
+@import 'styles/breakpoint.scss';
+@import 'styles/container-width.scss';
+
+.container {
+  width: $container-width-md;
+
+  @media (max-width: $breakpoint-sm-max) {
+    width: $container-width-sm;
+  }
+
+  @media (max-width: $breakpoint-xs-max) {
+    width: $container-width-xs;
+  }
+}
