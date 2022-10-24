@@ -1,5 +1,5 @@
-@import 'styles/breakpoint.scss';
-@import 'styles/container-width.scss';
+@import "styles/breakpoint";
+@import "styles/container-width";
 
 .container {
   width: $container-width-md;
