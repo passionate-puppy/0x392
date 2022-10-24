@@ -50,3 +50,8 @@ $h6-font-size: $heading-font-size-base;
 
   font-size: $h6-font-size;
 }
+
+%p {
+  font-size: 1rem;
+  line-height: 1.5;
+}

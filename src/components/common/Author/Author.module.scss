@@ -1,0 +1,11 @@
+@import "styles/typography";
+
+.container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.description {
+  @extend %p;
+}
