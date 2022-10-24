@@ -1,5 +1,5 @@
-import { ReactNode } from 'react'
 import styles from './Container.module.scss'
+import type { ReactNode } from 'react'
 
 export type ContainerProps = {
   children: ReactNode
