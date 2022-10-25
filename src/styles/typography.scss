@@ -1,6 +1,7 @@
-$heading-font-family: montserrat, system-ui, -apple-system, blinkmacsystemfont,
-  "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans: "Noto Sans TC", sans-serif;
+$font-family-serif: "Noto Serif TC", serif;
+
+$heading-font-family: $font-family-sans;
 $heading-font-size-base: 1rem;
 $heading-font-weight-medium: 500;
 $heading-font-weight-bold: 700;
@@ -61,7 +62,7 @@ $h6-font-size: $heading-font-size-base;
   font-weight: $heading-font-weight-medium;
 }
 
-%p {
+%paragraph {
   font-size: 1rem;
   line-height: 1.5;
 }
