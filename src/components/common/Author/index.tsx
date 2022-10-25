@@ -1,15 +1,14 @@
-import RoundedImage from 'components/base/RoundedImage'
+import Avatar from 'components/base/Avatar'
 import config from 'config'
 import styles from './Author.module.scss'
 
 function Author() {
   return (
     <div className={styles.container}>
-      <RoundedImage
+      <Avatar
         alt=""
+        size="medium"
         src={config.avatar}
-        width={48}
-        height={48}
       />
       <div className={styles.description}>
         {config.description}
