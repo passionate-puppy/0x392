@@ -1,0 +1,63 @@
+@import "styles/color";
+@import "styles/typography";
+
+%button-reset {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.button {
+  @extend %button-reset;
+
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: $color-slate-50;
+  border-radius: 3px;
+
+  &.buttonIconOnly {
+    padding: 4px;
+  }
+
+  &.buttonIconPositionBefore:not(.buttonIconOnly) {
+    padding: 4px 12px;
+  }
+
+  &.buttonIconPositionAfter:not(.buttonIconOnly) {
+    padding: 4px 12px;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: $color-slate-800;
+  }
+
+  .text {
+    font-family: $font-family-sans;
+    font-size: 14px;
+    color: $color-slate-800;
+  }
+}
+
+.button:hover {
+  background-color: $color-slate-100;
+
+  .icon {
+    color: $color-slate-900;
+  }
+
+  .text {
+    color: $color-slate-900;
+  }
+}
+
+.button:active {
+  background-color: $color-slate-200;
+}
