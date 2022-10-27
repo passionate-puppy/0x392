@@ -5,11 +5,11 @@ function Document() {
     <Html>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap"
           rel="stylesheet"
         />
         <link

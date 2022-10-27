@@ -1,17 +1,6 @@
-$font-family-sans: "Noto Sans TC", sans-serif;
-$font-family-serif: "Noto Serif TC", serif;
-$heading-font-family: $font-family-sans;
+$font-family: "Figtree", "Noto Sans TC", sans-serif;
 $heading-font-size-base: 1rem;
-$heading-font-weight-medium: 500;
-$heading-font-weight-bold: 700;
 $heading-line-height: 1.2;
-
-%heading-base {
-  margin: 0;
-  font-family: $heading-font-family;
-  line-height: $heading-line-height;
-}
-
 $h1-font-size: $heading-font-size-base * 2.5;
 $h2-font-size: $heading-font-size-base * 2;
 $h3-font-size: $heading-font-size-base * 1.75;
@@ -20,45 +9,33 @@ $h5-font-size: $heading-font-size-base * 1.25;
 $h6-font-size: $heading-font-size-base;
 
 %h1 {
-  @extend %heading-base;
-
   font-size: $h1-font-size;
-  font-weight: $heading-font-weight-bold;
+  line-height: $heading-line-height;
 }
 
 %h2 {
-  @extend %heading-base;
-
   font-size: $h2-font-size;
-  font-weight: $heading-font-weight-medium;
+  line-height: $heading-line-height;
 }
 
 %h3 {
-  @extend %heading-base;
-
   font-size: $h3-font-size;
-  font-weight: $heading-font-weight-medium;
+  line-height: $heading-line-height;
 }
 
 %h4 {
-  @extend %heading-base;
-
   font-size: $h4-font-size;
-  font-weight: $heading-font-weight-medium;
+  line-height: $heading-line-height;
 }
 
 %h5 {
-  @extend %heading-base;
-
   font-size: $h5-font-size;
-  font-weight: $heading-font-weight-medium;
+  line-height: $heading-line-height;
 }
 
 %h6 {
-  @extend %heading-base;
-
   font-size: $h6-font-size;
-  font-weight: $heading-font-weight-medium;
+  line-height: $heading-line-height;
 }
 
 %paragraph {
