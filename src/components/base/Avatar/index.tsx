@@ -4,11 +4,11 @@ import styles from './Avatar.module.scss'
 import type { ImageProps } from 'next/future/image'
 
 const sizeOptions = {
-  xSmall: styles.avatarXSmall,
-  small: styles.avatarSmall,
-  medium: styles.avatarMedium,
-  large: styles.avatarLarge,
-  xLarge: styles.avatarXLarge,
+  xSmall: 16,
+  small: 32,
+  medium: 40,
+  large: 96,
+  xLarge: 128,
 }
 
 export type AvatarProps = {
@@ -18,12 +18,16 @@ export type AvatarProps = {
 }
 
 function Avatar({ alt, size, src }: AvatarProps) {
+  const width = sizeOptions[size]
+  const height = sizeOptions[size]
+
   return (
     <div className={classNames(styles.avatar, sizeOptions[size])}>
       <Image
-        alt={alt}
-        fill
         src={src}
+        alt={alt}
+        width={width}
+        height={height}
       />
     </div>
   )
