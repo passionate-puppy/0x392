@@ -9,10 +9,12 @@ export type PostPathPageProps = {
 }
 
 function PostPathPage({ post }: PostPathPageProps) {
+  const { content } = post
+
   return (
     <Layout>
       <Header theme="secondary" />
-      <PostContent post={post} />
+      <PostContent content={content} />
       <Author />
     </Layout>
   )
