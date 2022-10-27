@@ -1,5 +1,5 @@
 @import "styles/breakpoints";
-@import "styles/container-width";
+@import "styles/container";
 
 .container {
   width: $container-width-md;
@@ -10,5 +10,7 @@
 
   @media (max-width: $breakpoint-xs-max) {
     width: $container-width-xs;
+    padding-right: $container-xs-horizontal-padding;
+    padding-left: $container-xs-horizontal-padding;
   }
 }
