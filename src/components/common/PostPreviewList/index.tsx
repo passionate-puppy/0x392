@@ -16,7 +16,7 @@ function PostPreviewList({ postPreviewList }: PostPreviewListProps) {
       {postPreviewList.map((postPreview) => {
         return (
           <PostPreviewListItem
-            key={postPreview.path}
+            key={postPreview.postPath}
             postPreview={postPreview}
           />
         )

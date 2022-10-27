@@ -4,5 +4,5 @@ export type PostPreview = {
     date: string
     spoiler: string
   }
-  path: string
+  postPath: string
 }
