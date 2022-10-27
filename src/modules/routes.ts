@@ -1,1 +1,6 @@
-export const routesPost = (postPath: string) => `/posts/${postPath}`
+const routes = {
+  home: () => '/',
+  post: (postPath: string) => `/posts/${postPath}`,
+}
+
+export default routes

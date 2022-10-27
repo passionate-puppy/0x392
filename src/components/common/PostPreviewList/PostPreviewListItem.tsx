@@ -1,4 +1,4 @@
-import { routesPost } from 'modules/routes'
+import routes from 'modules/routes'
 import Link from 'next/link'
 import styles from './PostPreviewListItem.module.scss'
 import type { PostPreview } from 'types/PostPreview'
@@ -15,7 +15,7 @@ function PostPreviewListItem({ postPreview }: PostPreviewListItemProps) {
 
   return (
     <div className={styles.container}>
-      <Link href={routesPost(postPath)}>{title}</Link>
+      <Link href={routes.post(postPath)}>{title}</Link>
       <pre>{JSON.stringify(postPreview, null, 2)}</pre>
     </div>
   )
