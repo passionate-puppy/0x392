@@ -1,6 +1,6 @@
 import { PostMeta } from './PostMeta'
 
 export type Post = {
-  code: string
+  content: string
   meta: PostMeta
 }

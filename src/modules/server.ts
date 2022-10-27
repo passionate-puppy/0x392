@@ -1,7 +1,6 @@
-import { compile } from '@mdx-js/mdx'
 import fs from 'fs'
+import matter from 'gray-matter'
 import path from 'path'
-import type { Post } from 'types/Post'
 import type { PostPreview } from 'types/PostPreview'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
@@ -25,14 +24,7 @@ export async function getPostPreviewList() {
 }
 
 export async function getPostMeta(postPath: string) {
-  // @see https://mdxjs.com/packages/node-loader/
-  const { meta } = await import(`../posts/${postPath}/index.mdx`)
-
-  return {
-    title: meta?.title,
-    date: meta?.date,
-    spoiler: meta?.spoiler,
-  }
+  return (await getPost(postPath)).meta
 }
 
 export async function getPost(postPath: string | null) {
@@ -40,19 +32,21 @@ export async function getPost(postPath: string | null) {
     throw new Error('`postPath` should be string.')
   }
 
-  const fullPath = path.join(postsDirectory, postPath, 'index.mdx')
-  const fileContent = fs.readFileSync(fullPath, 'utf-8').toString()
+  const fullPath = path.join(postsDirectory, postPath, 'index.md')
+  const fileContent = fs.readFileSync(fullPath, 'utf-8')
+  const {
+    content,
+    data: frontmatter,
+  } = matter(fileContent)
 
-  // @see https://mdxjs.com/guides/mdx-on-demand/
-  const code = String(
-    await compile(fileContent, { outputFormat: 'function-body' })
-  )
-  const meta = await getPostMeta(postPath)
-
-  const post: Post = {
-    code,
-    meta,
+  const meta = {
+    title: frontmatter?.title,
+    date: frontmatter?.date,
+    spoiler: frontmatter?.spoiler,
   }
 
-  return post
+  return {
+    content,
+    meta,
+  }
 }
