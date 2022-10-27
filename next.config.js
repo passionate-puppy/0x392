@@ -1,3 +1,6 @@
+const { remarkCodeHike } = require('@code-hike/mdx')
+const theme = require('shiki/themes/nord.json')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -7,11 +10,10 @@ const nextConfig = {
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [],
+    remarkPlugins: [
+      [remarkCodeHike, { theme }],
+    ],
     rehypePlugins: [],
-
-    // To use `MDXProvider`
-    providerImportSource: '@mdx-js/react',
   },
 })
 

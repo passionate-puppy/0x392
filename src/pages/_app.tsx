@@ -1,3 +1,4 @@
+import '@code-hike/mdx/dist/index.css'
 import 'styles/globals.scss'
 import type { AppProps } from 'next/app'
 
