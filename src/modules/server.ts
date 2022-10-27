@@ -6,11 +6,10 @@ import type { PostPreview } from 'types/PostPreview'
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
 export async function getPostPreviewList() {
-  const directoryList = fs.readdirSync(postsDirectory)
+  const postPaths = getPostPaths()
 
   const postPreviewList: PostPreview[] = await Promise.all(
-    directoryList.map(async (directoryName) => {
-      const postPath = directoryName
+    postPaths.map(async (postPath) => {
       const meta = await getPostMeta(postPath)
 
       return {
@@ -49,4 +48,8 @@ export async function getPost(postPath: string | null) {
     content,
     meta,
   }
+}
+
+export function getPostPaths() {
+  return fs.readdirSync(postsDirectory)
 }

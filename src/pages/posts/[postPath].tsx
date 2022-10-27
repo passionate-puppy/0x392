@@ -1,5 +1,5 @@
 import PostPathPage from 'components/pages/PostPathPage'
-import { getPost } from 'modules/server'
+import { getPost, getPostPaths } from 'modules/server'
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import type { Post } from 'types/Post'
 
@@ -16,11 +16,13 @@ const Path: NextPage<PathProps> = ({ post }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const postPaths = getPostPaths()
+  const paths = postPaths.map((postPath) => ({
+    params: { postPath },
+  }))
+
   return {
-    paths: [
-      // @todo
-      { params: { postPath: 'hello-world' } },
-    ],
+    paths,
     fallback: false,
   }
 }
