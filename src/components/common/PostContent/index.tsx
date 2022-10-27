@@ -14,7 +14,7 @@ function PostContent({ content }: PostContentProps) {
           const match = /language-(\w+)/.exec(className || '')
 
           if (!match) {
-            return <code className={className} />
+            return <code className={className}>{children}</code>
           }
 
           return (

@@ -12,9 +12,11 @@ function Header({ theme }: HeaderProps) {
     <div className={styles.container}>
       {theme === 'primary' && <h1>{config.title}</h1>}
       {theme === 'secondary' && (
-        <Link href={routes.home()}>
-          <h2>{config.title}</h2>
-        </Link>
+        <h2>
+          <Link href={routes.home()}>
+            {config.title}
+          </Link>
+        </h2>
       )}
     </div>
   )
