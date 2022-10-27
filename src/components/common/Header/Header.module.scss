@@ -2,11 +2,11 @@
 
 .container {
   h1 {
-    @extend %h1;
+    @extend %font-h1;
   }
 
   h2 {
-    @extend %h2;
+    @extend %font-h2;
 
     > a {
       cursor: pointer;
