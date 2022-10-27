@@ -9,14 +9,21 @@ export type PostPreviewListItemProps = {
 
 function PostPreviewListItem({ postPreview }: PostPreviewListItemProps) {
   const {
-    meta: { title },
+    meta: {
+      title,
+      date,
+      spoiler,
+    },
     postPath,
   } = postPreview
 
   return (
     <div className={styles.container}>
-      <Link href={routes.post(postPath)}>{title}</Link>
-      <pre>{JSON.stringify(postPreview, null, 2)}</pre>
+      <h2>
+        <Link href={routes.post(postPath)}>{title}</Link>
+      </h2>
+      <div>{date}</div>
+      <div>{spoiler}</div>
     </div>
   )
 }
