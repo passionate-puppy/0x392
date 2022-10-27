@@ -5,28 +5,28 @@
   padding: 0;
   background: none;
   border: none;
+  outline: none;
 }
 
 .button {
   @extend %button-reset;
 
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  padding: 6px 12px;
   cursor: pointer;
-  background-color: $color-slate-50;
-  border-radius: 3px;
+  background-color: white;
+  border-radius: 4px;
 
-  &.buttonIconOnly {
+  &.buttonWithText:not(.buttonWithIcon) {
+    padding: 6px 12px;
+  }
+
+  &.buttonWithIcon:not(.buttonWithText) {
     padding: 4px;
   }
 
-  &.buttonIconPositionBefore:not(.buttonIconOnly) {
-    padding: 4px 12px;
-  }
-
-  &.buttonIconPositionAfter:not(.buttonIconOnly) {
+  &.buttonWithText.buttonWithIcon {
+    display: flex;
+    gap: 4px;
+    align-items: center;
     padding: 4px 12px;
   }
 
@@ -36,27 +36,32 @@
     justify-content: center;
     width: 24px;
     height: 24px;
-    color: $color-slate-800;
   }
 
   .text {
     font-size: 14px;
-    color: $color-slate-800;
-  }
-}
-
-.button:hover {
-  background-color: $color-slate-100;
-
-  .icon {
-    color: $color-slate-900;
   }
 
+  .icon,
   .text {
-    color: $color-slate-900;
+    color: $cr-d-grey-2;
   }
-}
 
-.button:active {
-  background-color: $color-slate-200;
+  &:hover {
+    background-color: $cr-g-grey-5;
+
+    .icon,
+    .text {
+      color: $cr-d-grey-2;
+    }
+  }
+
+  &:active {
+    background-color: $cr-g-grey-4;
+
+    .icon,
+    .text {
+      color: $cr-d-grey-1;
+    }
+  }
 }
