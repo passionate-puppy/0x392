@@ -1,8 +1,6 @@
+import { PostMeta } from './PostMeta'
+
 export type PostPreview = {
-  meta: {
-    title: string
-    date: string
-    spoiler: string
-  }
+  meta: PostMeta
   postPath: string
 }
