@@ -12,7 +12,7 @@ const Index: NextPage<IndexProps> = ({ postPreviewList }) => {
 }
 
 export const getStaticProps: GetStaticProps<IndexProps> = async () => {
-  const postPreviewList = getPostPreviewList()
+  const postPreviewList = await getPostPreviewList()
 
   postPreviewList.sort((a, b) => (a.meta.date < b.meta.date ? 1 : -1))
 

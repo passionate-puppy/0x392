@@ -4,7 +4,6 @@ const config = {
   title: '0x392',
   avatar: imageAvatar,
   description: 'description',
-  postsDirectory: 'src/posts',
 }
 
 export default config
