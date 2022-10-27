@@ -19,11 +19,11 @@ function PostPreviewListItem({ postPreview }: PostPreviewListItemProps) {
 
   return (
     <div className={styles.container}>
-      <h2>
+      <h2 className={styles.title}>
         <Link href={routes.post(postPath)}>{title}</Link>
       </h2>
-      <div>{date}</div>
-      <div>{spoiler}</div>
+      <div className={styles.date}>{date}</div>
+      <div className={styles.spoiler}>{spoiler}</div>
     </div>
   )
 }
