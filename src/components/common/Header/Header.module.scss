@@ -7,5 +7,7 @@
 
   h2 {
     @extend %h2;
+
+    cursor: pointer;
   }
 }
