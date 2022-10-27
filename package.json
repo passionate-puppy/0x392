@@ -13,7 +13,6 @@
     "stylelint:fix": "stylelint \"**/*.scss\" --fix"
   },
   "dependencies": {
-    "@code-hike/mdx": "^0.7.4",
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/node-loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
