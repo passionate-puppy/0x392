@@ -1,0 +1,15 @@
+@import 'styles/typography';
+
+.siteHeader {
+  a {
+    cursor: pointer;
+  }
+
+  &.siteHeaderPrimary {
+    @extend %font-h1;
+  }
+
+  &.siteHeaderSecondary {
+    @extend %font-h3;
+  }
+}

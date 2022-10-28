@@ -1,7 +1,7 @@
 import Author from 'components/common/Author'
-import Header from 'components/common/Header'
 import Layout from 'components/common/Layout'
 import PostPreviewList from 'components/common/PostPreviewList'
+import SiteHeader from 'components/common/SiteHeader'
 import SocialLinks from 'components/common/SocialLinks'
 import styles from './IndexPage.module.scss'
 import type { PostPreview } from 'types/PostPreview'
@@ -13,7 +13,7 @@ export type IndexPageProps = {
 function IndexPage({ postPreviewList }: IndexPageProps) {
   return (
     <Layout>
-      <Header theme="primary" />
+      <SiteHeader theme="primary" />
       <div className={styles.author}>
         <Author />
       </div>

@@ -1,8 +1,9 @@
 import Author from 'components/common/Author'
-import Header from 'components/common/Header'
 import Layout from 'components/common/Layout'
 import PostContent from 'components/common/PostContent'
 import PostTitle from 'components/common/PostTitle'
+import SiteHeader from 'components/common/SiteHeader'
+import styles from './PostPathPage.module.scss'
 import type { Post } from 'types/Post'
 
 export type PostPathPageProps = {
@@ -17,8 +18,10 @@ function PostPathPage({ post }: PostPathPageProps) {
 
   return (
     <Layout>
-      <Header theme="secondary" />
-      <PostTitle>{title}</PostTitle>
+      <SiteHeader theme="secondary" />
+      <div className={styles.author}>
+        <PostTitle>{title}</PostTitle>
+      </div>
       <PostContent content={content} />
       <Author />
     </Layout>
