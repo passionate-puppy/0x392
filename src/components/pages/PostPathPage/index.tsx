@@ -9,10 +9,14 @@ import styles from './PostPathPage.module.scss'
 import type { Post } from 'types/Post'
 
 export type PostPathPageProps = {
-  post: Post
+  post: Post | null
 }
 
 function PostPathPage({ post }: PostPathPageProps) {
+  if (!post) {
+    return null
+  }
+
   const {
     content,
     meta,

@@ -1,5 +1,5 @@
 import IndexPage from 'components/pages/IndexPage'
-import { getPostMetaList } from 'modules/server'
+import { getAllPostData } from 'modules/server'
 import type { GetStaticProps, NextPage } from 'next'
 import type { PostPreview } from 'types/PostPreview'
 
@@ -12,9 +12,11 @@ const Index: NextPage<IndexProps> = ({ postPreviewList }) => {
 }
 
 export const getStaticProps: GetStaticProps<IndexProps> = async () => {
-  const postPreviewList = await getPostMetaList()
-
-  postPreviewList.sort((a, b) => (a.meta.date < b.meta.date ? 1 : -1))
+  const allPostData = await getAllPostData()
+  const postPreviewList = allPostData.map(({ meta, postPath }) => ({
+    meta,
+    postPath,
+  }))
 
   return {
     props: {

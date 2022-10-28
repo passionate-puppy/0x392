@@ -1,21 +1,14 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import type { PostPreview } from 'types/PostPreview'
+import type { Post } from 'types/Post'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-export async function getPost(postPath: string | null) {
-  if (typeof postPath !== 'string') {
-    throw new Error('`postPath` should be string.')
-  }
-
+function getPostData(postPath: string): Post {
   const fullPath = path.join(postsDirectory, postPath, 'index.md')
   const fileContent = fs.readFileSync(fullPath, 'utf-8')
-  const {
-    content,
-    data: frontmatter,
-  } = matter(fileContent)
+  const { content, data: frontmatter } = matter(fileContent)
 
   const meta = {
     title: frontmatter?.title,
@@ -23,33 +16,18 @@ export async function getPost(postPath: string | null) {
     spoiler: frontmatter?.spoiler,
   }
 
-  return {
-    content,
-    meta,
-  }
-}
-
-export async function getPostMeta(postPath: string) {
-  return (await getPost(postPath)).meta
+  return { content, meta, postPath }
 }
 
 export function getPostPaths() {
   return fs.readdirSync(postsDirectory)
 }
 
-export async function getPostMetaList() {
+export async function getAllPostData() {
   const postPaths = getPostPaths()
-
-  const postPreviewList: PostPreview[] = await Promise.all(
-    postPaths.map(async (postPath) => {
-      const meta = await getPostMeta(postPath)
-
-      return {
-        meta,
-        postPath,
-      }
-    })
+  const allPostData = await Promise.all(
+    postPaths.map((postPath) => getPostData(postPath))
   )
-
-  return postPreviewList
+  allPostData.sort((a, b) => (a.meta.date < b.meta.date ? 1 : -1))
+  return allPostData
 }
