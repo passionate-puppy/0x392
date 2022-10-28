@@ -19,11 +19,15 @@ function PostPathPage({ post }: PostPathPageProps) {
   return (
     <Layout>
       <SiteHeader theme="secondary" />
-      <div className={styles.author}>
+      <div className={styles.title}>
         <PostTitle>{title}</PostTitle>
       </div>
-      <PostContent content={content} />
-      <Author />
+      <div className={styles.postContent}>
+        <PostContent content={content} />
+      </div>
+      <div className={styles.author}>
+        <Author />
+      </div>
     </Layout>
   )
 }

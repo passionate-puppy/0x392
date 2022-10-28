@@ -1,49 +1,55 @@
 $font-family: "Figtree", "Noto Sans TC", sans-serif;
-$h1-font-size: 40px;
-$h2-font-size: 32px;
-$h3-font-size: 28px;
-$h4-font-size: 24px;
-$h5-font-size: 20px;
-$h6-font-size: 16px;
-$paragraph-font-size: 16px;
-$description-font-size: 14px;
+$font-family-code: consolas, monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$font-size-h1: 40px;
+$font-size-h2: 32px;
+$font-size-h3: 28px;
+$font-size-h4: 24px;
+$font-size-h5: 20px;
+$font-size-h6: 16px;
+$font-size-paragraph: 16px;
+$font-size-description: 14px;
+$font-size-code: 16px;
 
 %font-h1 {
-  font-size: $h1-font-size;
+  font-size: $font-size-h1;
   line-height: 1;
 }
 
 %font-h2 {
-  font-size: $h2-font-size;
+  font-size: $font-size-h2;
   line-height: 1;
 }
 
 %font-h3 {
-  font-size: $h3-font-size;
+  font-size: $font-size-h3;
   line-height: 1;
 }
 
 %font-h4 {
-  font-size: $h4-font-size;
+  font-size: $font-size-h4;
   line-height: 1;
 }
 
 %font-h5 {
-  font-size: $h5-font-size;
+  font-size: $font-size-h5;
   line-height: 1;
 }
 
 %font-h6 {
-  font-size: $h6-font-size;
+  font-size: $font-size-h6;
   line-height: 1;
 }
 
 %font-paragraph {
-  font-size: $paragraph-font-size;
+  font-size: $font-size-paragraph;
   line-height: 1;
 }
 
 %font-description {
-  font-size: $description-font-size;
+  font-size: $font-size-description;
   line-height: 1;
+}
+
+%font-code {
+  font-size: $font-size-code;
 }

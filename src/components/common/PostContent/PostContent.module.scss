@@ -1,0 +1,29 @@
+@import "styles/colors";
+@import "styles/typography";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  line-height: 28px;
+
+  p {
+    margin: 0;
+  }
+
+  ol,
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  pre {
+    margin: 0;
+  }
+
+  :not(pre) code {
+    @extend %font-code;
+
+    background-color: $cr-l-green-4;
+  }
+}
