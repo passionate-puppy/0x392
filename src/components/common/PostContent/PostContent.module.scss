@@ -25,6 +25,21 @@
     line-height: 1.75;
   }
 
+  a {
+    color: $cr-danger-1;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid $cr-g-grey-3;
+  }
+
   ol,
   ul {
     margin: 0;
@@ -32,7 +47,7 @@
   }
 
   > ol,
-  >ul {
+  > ul {
     padding: 0;
   }
 
