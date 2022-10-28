@@ -4,11 +4,11 @@ import styles from './Avatar.module.scss'
 import type { ImageProps } from 'next/future/image'
 
 const sizeOptions = {
-  xSmall: 16,
+  xsmall: 16,
   small: 32,
   medium: 40,
   large: 96,
-  xLarge: 128,
+  xlarge: 128,
 }
 
 export type AvatarProps = {

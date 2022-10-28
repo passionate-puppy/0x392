@@ -1,3 +1,11 @@
+@import "styles/typography";
+
+.title {
+  @extend %font-large;
+
+  font-weight: 500;
+}
+
 .postHeader {
   padding-top: 20px;
 }

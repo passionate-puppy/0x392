@@ -8,11 +8,11 @@
 }
 
 .title {
-  @extend %font-h1;
+  @extend %font-xlarge;
 }
 
 .date {
-  @extend %font-description;
+  @extend %font-xsmall;
 
   color: $cr-d-grey-3;
 }

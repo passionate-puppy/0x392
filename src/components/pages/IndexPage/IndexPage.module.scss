@@ -1,3 +1,11 @@
+@import "styles/typography";
+
+.title {
+  @extend %font-xxlarge;
+
+  font-weight: 500;
+}
+
 .author {
   padding-top: 10px;
 }

@@ -22,13 +22,13 @@ function PostContent({ content }: PostContentProps) {
 
             return (
               <SyntaxHighlighter
-                style={dracula}
                 customStyle={{
                   borderRadius: 8,
                   fontSize: 14,
                   margin: 0,
                 }}
                 language={match[1]}
+                style={dracula}
               >
                 {String(children)}
               </SyntaxHighlighter>

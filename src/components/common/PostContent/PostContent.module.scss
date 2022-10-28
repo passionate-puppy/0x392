@@ -4,17 +4,36 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  line-height: 28px;
+  gap: 1.75rem;
+
+  h2 {
+    @extend %font-large;
+
+    font-weight: 500;
+  }
+
+  h3 {
+    @extend %font-medium;
+
+    font-weight: 500;
+  }
 
   p {
+    @extend %font-small;
+
     margin: 0;
+    line-height: 1.75;
   }
 
   ol,
   ul {
-    padding: 0;
     margin: 0;
+    line-height: 1.75;
+  }
+
+  > ol,
+  >ul {
+    padding: 0;
   }
 
   pre {
@@ -22,8 +41,10 @@
   }
 
   :not(pre) code {
-    @extend %font-code;
+    @extend %font-xsmall;
 
-    background-color: $cr-l-green-4;
+    padding: 0 0.25rem;
+    font-family: $font-family-code;
+    background-color: $cr-alert-light;
   }
 }

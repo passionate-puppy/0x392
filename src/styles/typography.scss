@@ -1,55 +1,32 @@
 $font-family: "Figtree", "Noto Sans TC", sans-serif;
 $font-family-code: consolas, monaco, "Andale Mono", "Ubuntu Mono", monospace;
-$font-size-h1: 40px;
-$font-size-h2: 32px;
-$font-size-h3: 28px;
-$font-size-h4: 24px;
-$font-size-h5: 20px;
-$font-size-h6: 16px;
-$font-size-paragraph: 16px;
-$font-size-description: 14px;
-$font-size-code: 16px;
 
-%font-h1 {
-  font-size: $font-size-h1;
+%font-xxlarge {
+  font-size: 40px;
   line-height: 1;
 }
 
-%font-h2 {
-  font-size: $font-size-h2;
+%font-xlarge {
+  font-size: 32px;
   line-height: 1;
 }
 
-%font-h3 {
-  font-size: $font-size-h3;
+%font-large {
+  font-size: 28px;
   line-height: 1;
 }
 
-%font-h4 {
-  font-size: $font-size-h4;
+%font-medium {
+  font-size: 24px;
   line-height: 1;
 }
 
-%font-h5 {
-  font-size: $font-size-h5;
+%font-small {
+  font-size: 16px;
   line-height: 1;
 }
 
-%font-h6 {
-  font-size: $font-size-h6;
+%font-xsmall {
+  font-size: 14px;
   line-height: 1;
-}
-
-%font-paragraph {
-  font-size: $font-size-paragraph;
-  line-height: 1;
-}
-
-%font-description {
-  font-size: $font-size-description;
-  line-height: 1;
-}
-
-%font-code {
-  font-size: $font-size-code;
 }

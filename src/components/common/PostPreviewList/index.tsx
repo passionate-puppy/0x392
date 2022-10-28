@@ -1,6 +1,6 @@
+import PostPreviewListItem from './PostPreviewListItem'
 import styles from './PostPreviewList.module.scss'
 import type { PostPreview } from 'types/PostPreview'
-import PostPreviewListItem from './PostPreviewListItem'
 
 export type PostPreviewListProps = {
   postPreviewList: PostPreview[]
