@@ -5,27 +5,6 @@ import type { PostPreview } from 'types/PostPreview'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-export async function getPostPreviewList() {
-  const postPaths = getPostPaths()
-
-  const postPreviewList: PostPreview[] = await Promise.all(
-    postPaths.map(async (postPath) => {
-      const meta = await getPostMeta(postPath)
-
-      return {
-        meta,
-        postPath,
-      }
-    })
-  )
-
-  return postPreviewList
-}
-
-export async function getPostMeta(postPath: string) {
-  return (await getPost(postPath)).meta
-}
-
 export async function getPost(postPath: string | null) {
   if (typeof postPath !== 'string') {
     throw new Error('`postPath` should be string.')
@@ -50,6 +29,27 @@ export async function getPost(postPath: string | null) {
   }
 }
 
+export async function getPostMeta(postPath: string) {
+  return (await getPost(postPath)).meta
+}
+
 export function getPostPaths() {
   return fs.readdirSync(postsDirectory)
+}
+
+export async function getPostMetaList() {
+  const postPaths = getPostPaths()
+
+  const postPreviewList: PostPreview[] = await Promise.all(
+    postPaths.map(async (postPath) => {
+      const meta = await getPostMeta(postPath)
+
+      return {
+        meta,
+        postPath,
+      }
+    })
+  )
+
+  return postPreviewList
 }
