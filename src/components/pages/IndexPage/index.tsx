@@ -14,7 +14,7 @@ export type IndexPageProps = {
 
 function IndexPage({ postPreviewList }: IndexPageProps) {
   return (
-    <Layout>
+    <Layout description={config.description} title={config.meta.title}>
       <h1 className={styles.title}>
         <Link href={routes.home()}>{config.title}</Link>
       </h1>

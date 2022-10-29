@@ -27,8 +27,11 @@ function PostPathPage({ post, siblingPosts }: PostPathPageProps) {
     meta,
   } = post
 
+  const description = post.meta.spoiler
+  const title = `${post.meta.title} — ${config.meta.titlePrefix}`
+
   return (
-    <Layout>
+    <Layout description={description} title={title}>
       <div className={styles.title}>
         <Link href={routes.home()}>{config.title}</Link>
       </div>
