@@ -2,7 +2,7 @@ import { Head, Html, Main, NextScript } from 'next/document'
 
 function Document() {
   return (
-    <Html>
+    <Html lang="zh-Hant">
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap"
