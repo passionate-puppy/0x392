@@ -1,0 +1,29 @@
+@import "styles/colors";
+@import "styles/typography";
+
+.container {
+  display: grid;
+}
+
+%link-base {
+  @extend %font-small;
+
+  color: $cr-danger-1;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.prevLink {
+  @extend %link-base;
+
+  justify-self: flex-start;
+}
+
+.nextLink {
+  @extend %link-base;
+
+  justify-self: flex-end;
+}

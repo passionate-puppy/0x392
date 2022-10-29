@@ -2,6 +2,7 @@ import Author from 'components/common/Author'
 import Layout from 'components/common/Layout'
 import PostContent from 'components/common/PostContent'
 import PostHeader from 'components/common/PostHeader'
+import SiblingPosts from 'components/common/SiblingPosts'
 import config from 'config'
 import routes from 'modules/routes'
 import Link from 'next/link'
@@ -10,9 +11,13 @@ import type { Post } from 'types/Post'
 
 export type PostPathPageProps = {
   post: Post | null
+  siblingPosts: {
+    nextPost: Post | null
+    prevPost: Post | null
+  }
 }
 
-function PostPathPage({ post }: PostPathPageProps) {
+function PostPathPage({ post, siblingPosts }: PostPathPageProps) {
   if (!post) {
     return null
   }
@@ -35,6 +40,9 @@ function PostPathPage({ post }: PostPathPageProps) {
       </div>
       <div className={styles.author}>
         <Author />
+      </div>
+      <div className={styles.siblingPosts}>
+        <SiblingPosts siblingPosts={siblingPosts} />
       </div>
     </Layout>
   )
